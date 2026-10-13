@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C++ Midterm Examination</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root { --navy:#102347; --blue:#2457c5; --pale:#f4f7fc; }
+    html { scroll-behavior:smooth; scroll-padding-top:85px; }
+    body { background:var(--pale); color:#253247; }
+    .navbar { background:#fff; }
+    .brand-mark { display:inline-grid; place-items:center; width:42px;height:42px;border-radius:12px;background:var(--blue);color:#fff;font-weight:800; }
+    .hero { background:linear-gradient(125deg,#0b1730,#163e82 65%,#2d69d2); color:white; }
+    .hero .lead { color:#dce8ff; max-width:720px; }
+    .eyebrow { letter-spacing:.13em; text-transform:uppercase; font-size:.78rem; font-weight:800; }
+    .section-title { color:var(--navy); font-weight:800; }
+    .card { border:1px solid #e0e7f1; border-radius:1rem; }
+    .card-header { background:#f8faff; border-bottom:1px solid #e0e7f1; border-radius:1rem 1rem 0 0 !important; }
+    .stat-card { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:1rem; }
+    pre { background:#0b1220; color:#c5f6d6; padding:1.25rem; border-radius:.8rem; overflow:auto; font-size:.9rem; line-height:1.7; }
+    code { color:#2457c5; }
+    .table > :not(caption) > * > * { padding:.8rem 1rem; }
+    .task-pill { font-size:.85rem; font-weight:800; }
+    .note { background:#eef4ff; border:1px solid #cddcff; color:#193b78; border-radius:.8rem; }
+    footer { background:#fff; }
+    @media print {
+      .no-print, nav, .btn-copy { display:none !important; }
+      body { background:white !important; font-size:11pt; }
+      .hero { background:white !important; color:#111 !important; }
+      .hero .lead, .hero .text-white-50 { color:#333 !important; }
+      .stat-card { background:white !important; color:#111 !important; border:1px solid #ccc; }
+      .card { break-inside:avoid; box-shadow:none !important; }
+      pre { white-space:pre-wrap; color:#111; background:#f2f2f2; }
+      main { max-width:100% !important; }
+      a { text-decoration:none !important; color:inherit !important; }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top border-bottom shadow-sm no-print">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#home" style="color:var(--navy)">
+      <span class="brand-mark">C++</span><span>Midterm Examination</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <div class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <a class="nav-link" href="#instructions">Instructions</a>
+        <a class="nav-link" href="#set1">Set 1</a>
+        <a class="nav-link" href="#set2">Set 2</a>
+        <a class="nav-link" href="#rubric">Grading</a>
+        <button class="btn btn-primary ms-lg-2" onclick="window.print()">Print Exam</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero py-5 py-lg-6" id="home">
+  <div class="container py-4 py-lg-5">
+    <span class="badge rounded-pill text-bg-light mb-3 px-3 py-2">C++ Programming • Practical Examination</span>
+    <h1 class="display-4 fw-bold mb-3">Midterm Examination</h1>
+    <p class="lead fs-5 mb-4">Demonstrate your understanding of input and output, nested decision structures, nested switch statements, and looping in C++.</p>
+    <div class="d-flex flex-wrap gap-3 mb-5 no-print">
+      <a href="#instructions" class="btn btn-light btn-lg fw-semibold">Read Instructions</a>
+      <a href="#set1" class="btn btn-outline-light btn-lg fw-semibold">View Examination Sets</a>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4"><div class="stat-card p-3 h-100"><div class="small text-white-50">Examination</div><div class="fs-3 fw-bold">2 Sets</div></div></div>
+      <div class="col-6 col-md-4"><div class="stat-card p-3 h-100"><div class="small text-white-50">Points per set</div><div class="fs-3 fw-bold">100</div></div></div>
+      <div class="col-12 col-md-4"><div class="stat-card p-3 h-100"><div class="small text-white-50">Language</div><div class="fs-3 fw-bold">C++</div></div></div>
+    </div>
+  </div>
+</header>
+
+<main class="container py-5">
+  <section id="instructions" class="mb-5">
+    <div class="eyebrow text-primary mb-2">Before you begin</div>
+    <h2 class="section-title mb-3">General Instructions</h2>
+    <p class="text-secondary mb-4">Read each task carefully. Plan your program before coding, then test your output against the required format.</p>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100"><div class="card-body p-4">
+          <div class="fs-3 mb-2">⌨️</div><h3 class="h5 fw-bold">Programming requirements</h3>
+          <ul class="text-secondary mb-0">
+            <li>Use C++ and include the necessary header files.</li>
+            <li>Use <code>cin</code> to receive input and <code>cout</code> to display output.</li>
+            <li>Use the nested control structure required by your assigned set.</li>
+            <li>Use meaningful variable names and clear indentation.</li>
+          </ul>
+        </div></div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm h-100"><div class="card-body p-4">
+          <div class="fs-3 mb-2">📄</div><h3 class="h5 fw-bold">Submission reminders</h3>
+          <ul class="text-secondary mb-0">
+            <li>Save source code as a <code>.cpp</code> file.</li>
+            <li>Compile and run the program before submitting.</li>
+            <li>Test invalid values or menu selections where applicable.</li>
+            <li>Follow your instructor's file-naming and submission directions.</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+    <div class="note p-3 mt-4"><strong>Important:</strong> Complete the set assigned by your instructor. Each set is worth <strong>100 points</strong>, including the 10-point looping task.</div>
+  </section>
+
+  <section id="set1" class="mb-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+      <div><div class="eyebrow text-success mb-2">Examination Set 1</div><h2 class="section-title mb-1">Student Information and Academic Status</h2><p class="text-secondary mb-0">CIN, COUT, Nested If-Else, and For Loops</p></div>
+      <span class="badge rounded-pill text-bg-success task-pill px-3 py-2">100 Points Total</span>
+    </div>
+
+    <article class="card shadow-sm mb-4">
+      <div class="card-header p-3"><h3 class="h5 fw-bold mb-0">Task 1: Student Information and Academic Status <span class="badge text-bg-primary ms-1">80 points</span></h3></div>
+      <div class="card-body p-4">
+        <p>Create a C++ program that asks the user to enter the following information:</p>
+        <div class="row g-2 mb-4">
+          <div class="col-6"><div class="bg-light rounded p-3">Full Name</div></div><div class="col-6"><div class="bg-light rounded p-3">Age</div></div>
+          <div class="col-6"><div class="bg-light rounded p-3">Course</div></div><div class="col-6"><div class="bg-light rounded p-3">Grade (0–100)</div></div>
+        </div>
+        <p>Display the student's information in a formatted output. Using <strong>nested if-else statements</strong>, determine the student's academic status according to these conditions:</p>
+        <div class="table-responsive"><table class="table table-bordered align-middle mb-4">
+          <thead class="table-light"><tr><th>Grade</th><th>Academic Status</th></tr></thead>
+          <tbody><tr><td>90–100</td><td class="text-success fw-semibold">Passed with Honors</td></tr><tr><td>75–89</td><td class="text-primary fw-semibold">Passed</td></tr><tr><td>Below 75</td><td class="text-danger fw-semibold">Failed</td></tr><tr><td>Below 0 or above 100</td><td class="text-warning-emphasis fw-semibold">Invalid Grade</td></tr></tbody>
+        </table></div>
+        <div class="d-flex justify-content-between align-items-center mb-2"><h4 class="h6 fw-bold mb-0">Sample Output</h4><button class="btn btn-sm btn-outline-secondary btn-copy no-print" onclick="copyText('sample1')">Copy sample</button></div>
+        <pre id="sample1">Enter your full name: Juan Dela Cruz
+Enter your age: 20
+Enter your course: BSIT
+Enter your grade: 92
+
+----- STUDENT INFORMATION -----
+Name: Juan Dela Cruz
+Age: 20
+Course: BSIT
+Grade: 92
+Academic Status: Passed with Honors</pre>
+        
+      </div>
+    </article>
+
+    <article class="card shadow-sm">
+      <div class="card-header p-3"><h3 class="h5 fw-bold mb-0">Task 2: For Loops – Inner and Outer Looping <span class="badge text-bg-primary ms-1">20 points</span></h3></div>
+      <div class="card-body p-4">
+        <p>Write a C++ program using <strong>nested for loops</strong> (an outer loop and an inner loop) to display the following number pattern exactly as shown.</p>
+        <h4 class="h6 fw-bold">Sample Output</h4>
+        <pre id="loop1">*****
+****
+***
+**
+*</pre>
+        <p class="small text-secondary mb-0">Use an outer loop to control the rows and an inner loop to print the numbers in each row. Do not hard-code each output line.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="set2" class="mb-5">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+      <div><div class="eyebrow text-primary mb-2">Examination Set 2</div><h2 class="section-title mb-1">Student Meal Ordering System</h2><p class="text-secondary mb-0">CIN, COUT, Nested Switch, and For Loops</p></div>
+      <span class="badge rounded-pill text-bg-primary task-pill px-3 py-2">100 Points Total</span>
+    </div>
+
+    <article class="card shadow-sm mb-4">
+      <div class="card-header p-3"><h3 class="h5 fw-bold mb-0">Task 1: Student Meal Ordering System <span class="badge text-bg-primary ms-1">80 points</span></h3></div>
+      <div class="card-body p-4">
+        <p>Create a C++ program that asks the user to enter the following information:</p>
+        <div class="row g-2 mb-4">
+          <div class="col-md-4"><div class="bg-light rounded p-3">Student Name</div></div><div class="col-md-4"><div class="bg-light rounded p-3">Course</div></div><div class="col-md-4"><div class="bg-light rounded p-3">Year Level</div></div>
+        </div>
+        <p>Display the student's information in a formatted output. Then, use <strong>nested switch statements</strong> to allow the student to select a food category and a food item.</p>
+        <div class="row g-4 mb-4">
+          <div class="col-md-6"><div class="border rounded-3 p-3 h-100"><h4 class="h6 fw-bold">Food Category Menu</h4><ol class="mb-0"><li>Meals</li><li>Drinks</li></ol></div></div>
+          <div class="col-md-6"><div class="border rounded-3 p-3 h-100"><h4 class="h6 fw-bold">Food Item Menu</h4><p class="mb-1 fw-semibold">If Meals is selected:</p><ul><li>Burger – ₱50</li><li>Sandwich – ₱35</li></ul><p class="mb-1 fw-semibold">If Drinks is selected:</p><ul class="mb-0"><li>Juice – ₱25</li><li>Iced Tea – ₱20</li></ul></div></div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2"><h4 class="h6 fw-bold mb-0">Sample Output</h4><button class="btn btn-sm btn-outline-secondary btn-copy no-print" onclick="copyText('sample2')">Copy sample</button></div>
+        <pre id="sample2">Enter student name: Juan Dela Cruz
+Enter course: BSIT
+Enter year level: 1
+
+----- STUDENT INFORMATION -----
+Name: Juan Dela Cruz
+Course: BSIT
+Year Level: 1
+
+----- FOOD CATEGORY -----
+1. Meals
+2. Drinks
+Enter your choice: 1
+
+----- MEALS MENU -----
+1. Burger - 50
+2. Sandwich - 35
+Enter your choice: 1
+
+----- ORDER SUMMARY -----
+Student: Juan Dela Cruz
+Order: Burger
+Price: 50</pre>
+          </div>
+    </article>
+
+    <article class="card shadow-sm">
+      <div class="card-header p-3"><h3 class="h5 fw-bold mb-0">Task 2: For Loops – Inner and Outer Looping <span class="badge text-bg-primary ms-1">20 points</span></h3></div>
+      <div class="card-body p-4">
+        <p>Write a C++ program using <strong>nested for loops</strong> (an outer loop and an inner loop) to display the following number pattern exactly as shown.</p>
+        <h4 class="h6 fw-bold">Sample Output</h4>
+        <pre id="loop2">*****
+****
+***
+**
+*</pre>
+        <p class="small text-secondary mb-0">Use an outer loop to control the rows and an inner loop to print the numbers in each row. Do not hard-code each output line.</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="rubric" class="mb-5">
+    <div class="eyebrow text-primary mb-2">Assessment</div>
+    <h2 class="section-title mb-3">Point Distribution</h2>
+    <div class="card shadow-sm"><div class="card-body p-0">
+      <div class="table-responsive"><table class="table table-hover align-middle mb-0">
+        <thead class="table-dark"><tr><th>Task</th><th>Set 1</th><th>Set 2</th></tr></thead>
+        <tbody>
+          <tr><td>Main task (information + nested control structure)</td><td>80</td><td>80</td></tr>
+          <tr><td>Nested for loops number pattern</td><td>20</td><td>20</td></tr>
+          <tr class="table-primary fw-bold"><td>Total</td><td>100</td><td>100</td></tr>
+        </tbody>
+      </table></div>
+    </div></div>
+    <div class="alert alert-info mt-3 mb-0"><strong>Before submitting:</strong> Confirm that the program compiles, the required nested structure is used, the number pattern matches the sample, and the output is readable.</div>
+  </section>
+
+  <section class="rounded-4 p-4 p-md-5 text-white" style="background:var(--navy)">
+    <h2 class="h3 fw-bold">Ready to submit?</h2>
+    <p class="mb-4 text-white-50">Review your logic, test your program, and save your source code in the required format.</p>
+    <div class="d-flex flex-wrap gap-2 no-print"><button class="btn btn-light fw-semibold" onclick="window.print()">Print / Save as PDF</button><a class="btn btn-outline-light fw-semibold" href="#home">Back to top ↑</a></div>
+  </section>
+</main>
+
+<footer class="border-top mt-5 py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small text-secondary">
+    <span>C++ Programming • Midterm Examination</span><span>Practice logical thinking. Write clear code. Test your program.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function copyText(id) {
+    const text = document.getElementById(id).innerText;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => alert('Sample output copied.'));
+    } else {
+      const field = document.createElement('textarea');
+      field.value = text;
+      document.body.appendChild(field);
+      field.select();
+      document.execCommand('copy');
+      field.remove();
+      alert('Sample output copied.');
+    }
+  }
+</script>
+</body>
+</html>
